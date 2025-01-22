@@ -1,0 +1,313 @@
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-shadow: rgba(31, 38, 135, 0.07);
+  --input-bg: rgba(255, 255, 255, 0.9);
+  --button-gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  --button-hover: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
+.auth-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(135deg, rgba(44, 75, 255, 0.05), rgba(0, 212, 255, 0.05)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1500"><rect fill="none" width="2000" height="1500"/><defs><linearGradient id="a" gradientUnits="userSpaceOnUse" x1="0" y1="750" x2="1550" y2="750"><stop offset="0" stop-color="%23f7f7f7"/><stop offset="1" stop-color="%23ffffff"/></linearGradient></defs><path fill="url(%23a)" d="M1549.2 51.6c-5.4 99.1-20.2 197.6-44.2 293.6c-24.1 96-57.4 189.4-99.3 278.6c-41.9 89.2-92.4 174.1-150.3 253.3c-58 79.2-123.4 152.6-195.1 219c-71.7 66.4-149.6 125.8-232.2 177.2c-82.7 51.4-170.1 94.7-260.7 129.1c-90.6 34.4-184.4 60-279.5 76.3C192.6 1495 96.1 1502 0 1500c96.1-2.1 191.8-13.3 285.4-33.6c93.6-20.2 185-49.5 272.5-87.2c87.6-37.7 171.3-83.8 249.6-137.3c78.4-53.5 151.5-114.5 217.9-181.7c66.5-67.2 126.4-140.7 178.6-218.9c52.3-78.3 96.9-161.4 133-247.9c36.1-86.5 63.8-176.2 82.6-267.6c18.8-91.4 28.6-184.4 29.6-277.4c0.3-27.6 23.2-48.7 50.8-48.4s49.5 21.8 49.2 49.5c0 0.7 0 1.3-0.1 2L1549.2 51.6z"/></svg>');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 420px;
+  margin: 2rem;
+  text-align: center;
+}
+
+.auth-box {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: 24px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 var(--glass-shadow);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.logo i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  animation: pulse 2s infinite;
+}
+
+.logo h1 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.auth-box h2 {
+  color: var(--text-color);
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.auth-subtitle {
+  color: var(--light-text);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.auth-form {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.input-group.glass-effect {
+  position: relative;
+  background: var(--input-bg);
+  border: 1px solid var(--glass-border);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.input-group.glass-effect:focus-within {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(44, 75, 255, 0.1);
+}
+
+.input-group i {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--light-text);
+  transition: color 0.3s ease;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 2.75rem;
+  background: transparent;
+  border: none;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.input-group input::placeholder {
+  color: var(--light-text);
+}
+
+.input-group:focus-within i {
+  color: var(--primary-color);
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.remember-me,
+.terms-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--light-text);
+}
+
+.remember-me input[type="checkbox"],
+.terms-check input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--primary-color);
+}
+
+.auth-button {
+  width: 100%;
+  padding: 1rem;
+  background: var(--button-gradient);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--button-hover);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.auth-button:hover::before {
+  opacity: 1;
+}
+
+.auth-button span,
+.auth-button i {
+  position: relative;
+  z-index: 1;
+}
+
+.auth-button i {
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.auth-button:hover i {
+  transform: translateX(4px);
+}
+
+.auth-links {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.auth-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.auth-links a:hover {
+  color: var(--secondary-color);
+}
+
+.auth-footer {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: var(--light-text);
+}
+
+.footer-links {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: var(--light-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--text-color);
+}
+
+.footer-links span {
+  margin: 0 0.5rem;
+}
+
+.copyright {
+  color: var(--light-text);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    margin: 1rem;
+  }
+
+  .auth-box {
+    padding: 2rem;
+    border-radius: 20px;
+  }
+
+  .logo h1 {
+    font-size: 1.75rem;
+  }
+
+  .auth-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-options {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}
+
+.auth-bg-home {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 200;
+  font-family: 'Poppins', sans-serif;
+  padding-left: 2.5rem;
+}
+
+.form-group select option {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
