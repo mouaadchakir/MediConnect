@@ -1,0 +1,145 @@
+:root {
+  --primary: #2c4bff;
+  --secondary: #00d4ff;
+  --text: #333;
+  --text-light: #666;
+  --white: #fff;
+  --border: #eaeaea;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --avatar-size: 40px;
+}
+.main-content {
+    display: block;
+    padding: 0;
+}
+
+.profile-container {
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+}
+.message-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: var(--primary);
+}
+
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.message-item {
+  background-color: var(--white);
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 12px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.message-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px var(--shadow);
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--text);
+}
+
+.sender-info {
+  display: flex;
+  align-items: center;
+}
+
+.sender-avatar {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.message-sender {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.message-date {
+  color: var(--text-light);
+}
+
+.message-body {
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: var(--text-light);
+}
+
+.message-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.message-number {
+  font-size: 14px;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.message-action {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  background: linear-gradient(135deg, #4466ff 0%, var(--secondary) 100%);
+}
+
+.message-action i {
+  margin-right: 8px;
+}
+
+.message-action:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .message-item {
+    padding: 20px;
+  }
+  .message-title {
+    font-size: 24px;
+  }
+}
+  
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.read-dega {
+  background-color: #d4d4d477;
+}
