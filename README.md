@@ -1,7 +1,7 @@
 <h1> HOME</h1>
 <img src="captur/home.jpg">
 <br>
-<h1> DAAABOARD</h1>
+<h1> DASHBOARD</h1>
 <img src="captur/dashboord.jpg">
 <br>
 <h1>ALLDOCTOR</h1>
