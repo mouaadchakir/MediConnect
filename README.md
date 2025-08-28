@@ -1,8 +1,11 @@
 ### HOME
 <img src="captur/home.jpg">
 <br>
-### Dashboard
+### DAAABOARD
 <img src="captur/dashboord.jpg">
+<br>
+### ALLDOCTOR
+<img src="captur/alldoctor.jpg"
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
