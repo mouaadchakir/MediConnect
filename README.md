@@ -1,10 +1,10 @@
-### HOME
+<h1> HOME</h1>
 <img src="captur/home.jpg">
 <br>
-### DAAABOARD
+<h1> DAAABOARD</h1>
 <img src="captur/dashboord.jpg">
 <br>
-### ALLDOCTOR
+<h1>ALLDOCTOR</h1>
 <img src="captur/alldoctor.jpg"
 ## About Laravel
 
