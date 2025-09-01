@@ -94,7 +94,7 @@
                 <td><span class="status active">Actif</span></td>
                 <td>
                   <div class="action-buttons" style="display: flex;justify-content: space-between;align-items: center;">
-                    <form action="" method="POST">
+                    <form action="{{ route('admin.alldoctors.destroy', $doctor->id) }}" method="POST">
                       @csrf
                       <button class="delete-btn" type="submit" style="background-color: transparent;border: none;color: #ff3d71;cursor: pointer;">
                         <i class="fas fa-trash" style="font-size: 16px;color: #ff3d71;cursor: pointer;"></i>

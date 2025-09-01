@@ -13,4 +13,25 @@ class AdminController extends Controller
         $allDoctors = Doctor::all();
         return view('src.admin.alldoctors', compact('allDoctors'));
     }
+
+    public function searchDoctors(Request $request)
+    {
+      $query = $request->searchvalue;
+      $allDoctors = Doctor::where('name', 'like', '%' . $query . '%')
+        ->orWhere('specialization', 'like', '%' . $query . '%')
+        ->orWhere('license_number', 'like', '%' . $query . '%')
+        ->orWhere('address', 'like', '%' . $query . '%')
+        ->orWhere('experience', 'like', '%' . $query . '%')
+        ->orWhere('certifications', 'like', '%' . $query . '%')
+        ->get();
+      return view('src.admin.alldoctors', compact('allDoctors'));
+    }
+
+    public function destroy($id)
+    {
+        $doctor = Doctor::findOrFail($id);
+        $doctor->delete();
+
+        return redirect()->route('admin.alldoctors')->with('success', 'Doctor deleted successfully.');
+    }
 }

@@ -37,6 +37,8 @@ Route::controller(DoctorController::class)->prefix('dashboard/doctor')->name('do
   Route::get('meassagelist', 'meassagelist')->name('meassagelist');
   Route::get('meassangeroom/{id}', 'meassangeroom')->name('meassangeroom');
 });
-Route::controller(AdminController::class)->prefix('dashboard/admin')->name('admin.')->middleware(['auth'])->group(function () {
+Route::controller(AdminController::class)->prefix('dashboard/admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {
   Route::get('alldoctors', 'alldoctors')->name('alldoctors');
+  Route::post('alldoctors', 'searchDoctors')->name('alldoctors.search');
+  Route::post('alldoctors/{id}/delete', 'destroy')->name('alldoctors.destroy');
 });
