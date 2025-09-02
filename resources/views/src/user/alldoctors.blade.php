@@ -35,6 +35,7 @@
       <ul class="nav-menu">
         <li><a href="{{ route('dashboard') }}"><i class="fas fa-home"></i><span>Page d'accueil</span><span class="active-indicator"></span></a></li>
         <li><a href="{{ route('user.meassagelist') }}" ><i class="fas fa-envelope"></i><span>Messages</span><span class="active-indicator"></span></a></li>
+        <li><a href="{{ route('user.appointments.index') }}"><i class="fas fa-calendar-check"></i><span>Mes rendez-vous</span><span class="active-indicator"></span></a></li>
         <li><a class="active" href="{{ route('user.alldoctors') }}"><i class="fas fa-user-md"></i><span>Tous les médecins</span><span class="active-indicator"></span></a></li>
         <li><a href="{{ route('user.profile') }}"><i class="fas fa-user"></i><span>Paramètres du profil</span><span class="active-indicator"></span></a></li>
       </ul>
@@ -78,7 +79,7 @@
                 <th>Image</th>
                 <th>Spécialisation</th>
                 <th>Statut</th>
-                <th>Contact</th>
+                <th>Actions</th>
                 <th>Heures de travail</th>
                 <th>Patients</th>
                 <th>Évaluation</th>
@@ -109,8 +110,12 @@
                   <div class="action-buttons">
                     <a 
                       href="{{ route('user.meassangeroom', ['id' => $doctor->user_id]) }}"
-                      style="text-decoration: none;"
+                      style="text-decoration: none; margin-bottom: 5px;"
                     class="action-btn edit">Envoyer un message</a>
+                    <a 
+                      href="{{ route('user.appointments.create', ['doctor' => $doctor->user_id]) }}"
+                      style="text-decoration: none;"
+                    class="action-btn book">Prendre RDV</a>
                   </div>
                 </td>
                 <td>{{ rand(1, 12) }}:00 AM - {{ rand(1, 12) }}:00 PM</td>

@@ -8,6 +8,7 @@ use App\Models\Doctor;
 use App\Models\Data_user;
 use Illuminate\Support\Facades\Validator;
 use App\Services\Messagesortde;
+use App\Models\Appointment;
 
 class DoctorController extends Controller
 {
@@ -77,5 +78,18 @@ class DoctorController extends Controller
         $datamessage = $datamessage->get_all_messages_doctor($id);
         $datadoctor = Data_user::where('user_id', $id)->first();
         return view('src.doctor.meassangeroom', compact('datamessage', 'datadoctor'));
+    }
+
+    public function appointments()
+    {
+        $doctor_id = Auth::id();
+        $appointments = Appointment::where('doctor_id', $doctor_id)
+                                    ->with('user') // Eager load the patient's data
+                                    ->orderBy('appointment_date', 'desc')
+                                    ->get();
+
+        $datauser = Doctor::where('email', Auth::user()->email)->first();
+
+        return view('src.doctor.appointments.index', compact('appointments', 'datauser'));
     }
 }

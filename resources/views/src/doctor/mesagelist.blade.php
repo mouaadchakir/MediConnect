@@ -39,6 +39,7 @@
 
         <li><a href="{{ route('dashboard') }}"><i class="fas fa-home"></i><span>Page d'accueil</span><span class="active-indicator"></span></a></li>
         <li><a class="active" href="{{ route('doctor.meassagelist') }}"><i class="fas fa-envelope"></i><span>Messages</span><span class="active-indicator"></span></a></li>
+        <li><a href="{{ route('doctor.appointments.index') }}"><i class="fas fa-calendar-check"></i><span>Mes rendez-vous</span><span class="active-indicator"></span></a></li>
         <li><a href="{{ route('doctor.profile') }}"><i class="fas fa-user"></i><span>Paramètres du profil</span><span class="active-indicator"></span></a></li>
 
       </ul>

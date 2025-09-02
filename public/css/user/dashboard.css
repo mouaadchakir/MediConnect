@@ -57,7 +57,6 @@ body {
   align-items: center;
   height: 100%;
   padding: 0 24px;
-  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -198,6 +197,18 @@ body {
 .nav-menu li a.active {
   color: var(--primary);
   background-color: rgba(44, 75, 255, 0.04);
+}
+
+.container {
+  display: flex;
+}
+
+.main-content {
+  margin-left: var(--nav-width);
+  padding: 24px;
+  margin-top: var(--header-height);
+  flex-grow: 1;
+  width: calc(100% - var(--nav-width));
 }
 
 .nav-menu li a.active .active-indicator {

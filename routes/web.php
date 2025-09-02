@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AppointmentController;
 
 Route::view('/', 'welcome')->name('home');
 Route::middleware(['guest'])->group(function () {
@@ -30,12 +31,18 @@ Route::controller(UserController::class)->prefix('dashboard/user')->name('user.'
   Route::post('alldoctors', 'searchDoctors')->name('alldoctors.search');
   Route::get('meassagelist', 'meassagelist')->name('meassagelist');
   Route::get('meassangeroom/{id}', 'meassangeroom')->name('meassangeroom');
+
+  // Appointment routes
+  Route::get('appointments/create/{doctor}', [AppointmentController::class, 'create'])->name('appointments.create');
+  Route::post('appointments', [AppointmentController::class, 'store'])->name('appointments.store');
+  Route::get('appointments', [AppointmentController::class, 'index'])->name('appointments.index');
 });
 Route::controller(DoctorController::class)->prefix('dashboard/doctor')->name('doctor.')->middleware(['auth'])->group(function () {
   Route::get('profile', 'profile')->name('profile');
   Route::post('profile', 'updatedoctor')->name('profile.update');
   Route::get('meassagelist', 'meassagelist')->name('meassagelist');
   Route::get('meassangeroom/{id}', 'meassangeroom')->name('meassangeroom');
+  Route::get('appointments', 'appointments')->name('appointments.index');
 });
 Route::controller(AdminController::class)->prefix('dashboard/admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {
   Route::get('alldoctors', 'alldoctors')->name('alldoctors');

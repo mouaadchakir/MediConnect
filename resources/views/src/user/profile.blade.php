@@ -36,6 +36,7 @@
       <ul class="nav-menu">
         <li><a href="{{ route('dashboard') }}"><i class="fas fa-home"></i><span>Page d'accueil</span><span class="active-indicator"></span></a></li>
         <li><a href="{{ route('user.meassagelist') }}" ><i class="fas fa-envelope"></i><span>Messages</span><span class="active-indicator"></span></a></li>
+        <li><a href="{{ route('user.appointments.index') }}"><i class="fas fa-calendar-check"></i><span>Mes rendez-vous</span><span class="active-indicator"></span></a></li>
         <li><a href="{{ route('user.alldoctors') }}"><i class="fas fa-user-md"></i><span>Tous les médecins</span><span class="active-indicator"></span></a></li>
         <li><a class="active" href="{{ route('user.profile') }}"><i class="fas fa-user"></i><span>Paramètres du profil</span><span class="active-indicator"></span></a></li>
       </ul>

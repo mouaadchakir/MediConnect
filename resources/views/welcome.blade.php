@@ -259,7 +259,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2024 MediConnect. Tous droits réservés.</p>
+      <p>&copy; 2025 MediConnect. Tous droits réservés.</p>
     </div>
   </footer>
   <script src="{{ asset('src/4.js') }}"></script>

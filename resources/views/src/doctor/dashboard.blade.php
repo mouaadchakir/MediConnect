@@ -135,16 +135,8 @@
     </main>
   </div>
   <script>
-    let MIDSINE_COUNT = {
-      {
-        $doctorsCount[2]
-      }
-    };
-    let USER_COUNT = {
-      {
-        $doctorsCount[3]
-      }
-    };
+    let MIDSINE_COUNT = {{ $doctorsCount[2] }};
+    let USER_COUNT = {{ $doctorsCount[3] }};
 
   </script>
   <script src="{{ asset('js/user/dashboard.js') }}"></script>
